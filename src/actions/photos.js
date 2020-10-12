@@ -7,7 +7,7 @@ export const beginAddPhoto = (photo) => {
     try {
       const formData = new FormData();
       formData.append('photo', photo);
-      await acios.post(`${BASE_API_URL}/photos`, formData, {
+      await axios.post(`${BASE_API_URL}/photos`, formData, {
       	headers: {
       	  'Content-Type': 'multipart/form-data',
       	}

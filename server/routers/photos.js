@@ -38,10 +38,12 @@ Router.post('/photos', upload.single('photo'), async (req, res) => {
 
 Router.get('/photos', async (req, res) => {
   try {
-    const photos = await Photo.find({});
+    console.log('sup');
+    const photos = await Photo.find();
+    //res.set('Content-Type', 'image/jpeg');
     res.send(photos);
   } catch (err) {
-    res.status(500).send({ get_error: 'Error while getting list of photos' });
+    res.status(500).send({ get_error: err.message });
   }
 });
 

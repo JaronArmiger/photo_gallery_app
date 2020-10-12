@@ -17,7 +17,7 @@ const UploadForm = ({ errors, dispatch }) => {
   }, []);
 
   const handleOnChange = (e) => {
-    const file = e.target.file[0];
+    const file = e.target.files[0];
     setPhoto(file);
   };
 
